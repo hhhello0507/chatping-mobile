@@ -59,6 +59,7 @@ flutter:
   uses-material-design: true
   assets:
     - assets/images/kiss_face.png
+    - assets/images/heart.png
 
   # To add assets to your application, add an assets section, like this:
   # assets:

@@ -2,6 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
+import 'matching_first.dart';
+
 class MatchingPage extends StatefulWidget {
   const MatchingPage({super.key});
 
@@ -29,11 +31,14 @@ class _MatchingPageState extends State<MatchingPage> {
                         "우리 동네 랜덤 채팅",
                         style: TextStyle(fontSize: 16),
                       ),
-                      SizedBox(height: 16),
+                      const SizedBox(height: 16),
                       SizedBox(
                         width: double.infinity,
                         height: 52,
-                        child: FilledButton(onPressed: () {}, child: const Text("매칭 시작")),
+                        child: FilledButton(
+                            onPressed: () {
+                              Navigator.push(context, MaterialPageRoute(builder: (context) => MatchingFirst()));
+                            }, child: const Text("매칭 시작")),
                       )
                     ],
                   )
