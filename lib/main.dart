@@ -1,3 +1,4 @@
+import 'package:chatping/navigation/main_page.dart';
 import 'package:flutter/material.dart';
 
 import 'matching.dart';
@@ -17,7 +18,7 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       debugShowCheckedModeBanner: false,
-      home: const MatchingPage(),
+      home: const MainPage(),
     );
   }
 }

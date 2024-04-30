@@ -1,5 +1,4 @@
 import 'package:chatping/matching_third.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class MatchingSecond extends StatefulWidget {
@@ -15,11 +14,11 @@ class _MatchingSecondState extends State<MatchingSecond> {
     return Scaffold(
       body: Center(
         child: Container(
-          padding: EdgeInsets.symmetric(horizontal: 30),
+          padding: const EdgeInsets.symmetric(horizontal: 30),
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
-              Text(
+              const Text(
                 "프로필을 선택해줘",
                 style: TextStyle(fontSize: 16),
               ),

@@ -1,7 +1,4 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
-
 import 'matching_first.dart';
 
 class MatchingPage extends StatefulWidget {
@@ -15,6 +12,7 @@ class _MatchingPageState extends State<MatchingPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       body: Stack(
         children: [
           // main
