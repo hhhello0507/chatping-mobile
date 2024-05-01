@@ -17,7 +17,7 @@ class CPCTAButton extends StatelessWidget {
       height: 52,
       decoration: BoxDecoration(
           borderRadius: const BorderRadius.all(Radius.circular(100)),
-          gradient: gradient(Primary.p50)),
+          gradient: context.gradient(Primary.p50)),
       child: FilledButton(
           style: FilledButton.styleFrom(
               backgroundColor: Colors.transparent,

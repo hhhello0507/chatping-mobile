@@ -12,7 +12,7 @@ class PrimaryGradientMask extends StatelessWidget {
   Widget build(BuildContext context) {
     return ShaderMask(
       blendMode: BlendMode.srcIn,
-      shaderCallback: (bounds) => gradient(Primary.p50)
+      shaderCallback: (bounds) => context.gradient(Primary.p50)
           .createShader(Rect.fromLTWH(0, 0, bounds.width, bounds.height)),
       child: child,
     );

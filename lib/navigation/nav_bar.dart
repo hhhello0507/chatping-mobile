@@ -24,11 +24,11 @@ class NavBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        color: color(Background.normal),
+        color: context.color(Background.normal),
         borderRadius: const BorderRadius.all(Radius.circular(18)),
         boxShadow: [
           BoxShadow(
-            color: color(CPShadow.bottomNavigation),
+            color: context.color(CPShadow.bottomNavigation),
             blurRadius: 12,
             offset: const Offset(0, 4),
             spreadRadius: 0,
@@ -38,7 +38,7 @@ class NavBar extends StatelessWidget {
       child: ClipRRect(
         borderRadius: BorderRadius.circular(18),
         child: Container(
-          color: color(Background.normal),
+          color: context.color(Background.normal),
           padding: const EdgeInsets.symmetric(vertical: 8),
           child: Row(
             mainAxisSize: MainAxisSize.min,
@@ -46,18 +46,21 @@ class NavBar extends StatelessWidget {
             children: [
               const SizedBox(width: 18),
               navItem(
+                context,
                 'assets/icons/home_fill.svg',
                 pageIndex == 0,
                 onTap: () => onTap(0),
               ),
               const SizedBox(width: 18),
               navItem(
+                context,
                 'assets/icons/ping_fill.svg',
                 pageIndex == 1,
                 onTap: () => onTap(1),
               ),
               const SizedBox(width: 18),
               navItem(
+                context,
                 'assets/icons/person_fill.svg',
                 pageIndex == 2,
                 onTap: () => onTap(2),
@@ -70,12 +73,12 @@ class NavBar extends StatelessWidget {
     );
   }
 
-  Widget navItem(String icon, bool selected, {Function()? onTap}) {
+  Widget navItem(BuildContext context, String icon, bool selected, {Function()? onTap}) {
     var iconButton = IconButton(
       onPressed: onTap,
       icon: SvgPicture.asset(
         icon,
-        colorFilter: ColorFilter.mode(selected ? Colors.white : color(Label.assistive), BlendMode.srcIn),
+        colorFilter: ColorFilter.mode(selected ? Colors.white : context.color(Label.assistive), BlendMode.srcIn),
         width: 32,
         height: 32,
       ),

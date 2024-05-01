@@ -1,13 +1,9 @@
 import 'package:chatping/color/build_context+.dart';
-import 'package:chatping/color/gradient/primary.dart';
 import 'package:chatping/color/sementic/background.dart';
 import 'package:chatping/component/button/cp_cta_button.dart';
 import 'package:chatping/component/theme/textstyle.dart';
-import 'package:chatping/navigation/nav_bar.dart';
 import 'package:chatping/util/primary_gradient_mask.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'matching_first.dart';
 
 class MatchingPage extends StatefulWidget {
@@ -21,7 +17,7 @@ class _MatchingPageState extends State<MatchingPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: color(Background.normal),
+      backgroundColor: context.color(Background.normal),
       body: Stack(
         children: [
           // main
