@@ -1,15 +1,14 @@
 import 'dart:ui';
 
+import 'package:chatping/color/pallete/shadow_pallete.dart';
 import 'package:chatping/color/sementic/sementicable.dart';
 
 import '../pallete/palletable.dart';
-import '../pallete/neutral.dart';
 
-enum Shadow implements Sementicable {
-  normal(Neutral.n100, Neutral.n80);
+enum CPShadow implements Sementicable {
+  bottomNavigation(ShadowPallete.bottomNavigationL, ShadowPallete.bottomNavigationD);
 
-
-  const Shadow(this.lightColor, this.darkColor);
+  const CPShadow(this.lightColor, this.darkColor);
 
   @override
   final Palletable lightColor;

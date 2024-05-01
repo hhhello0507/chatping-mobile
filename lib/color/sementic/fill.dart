@@ -1,14 +1,15 @@
 import 'dart:ui';
 
+import 'package:chatping/color/pallete/shadow_pallete.dart';
 import 'package:chatping/color/sementic/sementicable.dart';
 
 import '../pallete/palletable.dart';
-import '../pallete/neutral.dart';
 
-enum Inverse implements Sementicable {
-  background(Neutral.n90, Neutral.n00);
+enum Fill implements Sementicable {
+  normal(ShadowPallete.fillNormalL, ShadowPallete.fillNormalD),
+  strong(ShadowPallete.fillStrongL, ShadowPallete.fillStrongD);
 
-  const Inverse(this.lightColor, this.darkColor);
+  const Fill(this.lightColor, this.darkColor);
 
   @override
   final Palletable lightColor;
