@@ -1,7 +1,14 @@
 import 'dart:io';
 
+import 'package:chatping/color/build_context+.dart';
+import 'package:chatping/color/gradient/primary.dart';
+import 'package:chatping/color/sementic/background.dart';
+import 'package:chatping/color/sementic/label.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+
+import '../color/sementic/shadow.dart';
+import '../util/primary_gradient_mask.dart';
 
 class NavBar extends StatelessWidget {
   final int pageIndex;
@@ -16,14 +23,14 @@ class NavBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: const BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.all(Radius.circular(18)),
+      decoration: BoxDecoration(
+        color: color(Background.normal),
+        borderRadius: const BorderRadius.all(Radius.circular(18)),
         boxShadow: [
           BoxShadow(
-            color: Color(0x0F000000),
+            color: color(CPShadow.bottomNavigation),
             blurRadius: 12,
-            offset: Offset(0, 4),
+            offset: const Offset(0, 4),
             spreadRadius: 0,
           )
         ]
@@ -31,7 +38,7 @@ class NavBar extends StatelessWidget {
       child: ClipRRect(
         borderRadius: BorderRadius.circular(18),
         child: Container(
-          color: Colors.white,
+          color: color(Background.normal),
           padding: const EdgeInsets.symmetric(vertical: 8),
           child: Row(
             mainAxisSize: MainAxisSize.min,
@@ -64,19 +71,21 @@ class NavBar extends StatelessWidget {
   }
 
   Widget navItem(String icon, bool selected, {Function()? onTap}) {
-    var color = selected ? Colors.blue : Colors.grey.shade500;
+    var iconButton = IconButton(
+      onPressed: onTap,
+      icon: SvgPicture.asset(
+        icon,
+        colorFilter: ColorFilter.mode(selected ? Colors.white : color(Label.assistive), BlendMode.srcIn),
+        width: 32,
+        height: 32,
+      ),
+    );
     return SizedBox(
       height: 48,
       width: 48,
-      child: IconButton(
-        onPressed: onTap,
-        icon: SvgPicture.asset(
-          icon,
-          colorFilter: ColorFilter.mode(color, BlendMode.srcIn),
-          width: 32,
-          height: 32,
-        ),
-      ),
+      child: selected ? PrimaryGradientMask(
+        child: iconButton,
+      ) : iconButton,
     );
   }
 }

@@ -1,4 +1,13 @@
+import 'package:chatping/color/build_context+.dart';
+import 'package:chatping/color/gradient/primary.dart';
+import 'package:chatping/color/sementic/background.dart';
+import 'package:chatping/component/button/cp_cta_button.dart';
+import 'package:chatping/component/theme/textstyle.dart';
+import 'package:chatping/navigation/nav_bar.dart';
+import 'package:chatping/util/primary_gradient_mask.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'matching_first.dart';
 
 class MatchingPage extends StatefulWidget {
@@ -12,7 +21,7 @@ class _MatchingPageState extends State<MatchingPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: color(Background.normal),
       body: Stack(
         children: [
           // main
@@ -23,21 +32,22 @@ class _MatchingPageState extends State<MatchingPage> {
                 mainAxisSize: MainAxisSize.min,
                 children: [
                   Image.asset('assets/images/kiss_face.png'),
+                  const SizedBox(height: 32),
                   Column(
                     children: [
-                      const Text(
-                        "우리 동네 랜덤 채팅",
-                        style: TextStyle(fontSize: 16),
+                      const PrimaryGradientMask(
+                        child: Text(
+                          "우리 동네 랜덤 채팅",
+                          style: CPTextStyle.bold1,
+                        ),
                       ),
                       const SizedBox(height: 16),
-                      SizedBox(
-                        width: double.infinity,
-                        height: 52,
-                        child: FilledButton(
-                            onPressed: () {
-                              Navigator.push(context, MaterialPageRoute(builder: (context) => MatchingFirst()));
-                            }, child: const Text("매칭 시작")),
-                      )
+                      CPCTAButton("매칭 시작", onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const MatchingFirst()));
+                      })
                     ],
                   )
                 ],

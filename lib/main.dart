@@ -19,6 +19,7 @@ class MyApp extends StatelessWidget {
           theme: ThemeData(
             useMaterial3: true,
           ),
+          themeMode: ThemeMode.system,
           debugShowCheckedModeBanner: false,
           home: const MainPage(),
         ));

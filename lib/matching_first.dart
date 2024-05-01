@@ -1,6 +1,11 @@
+import 'package:chatping/color/build_context+.dart';
+import 'package:chatping/color/sementic/background.dart';
+import 'package:chatping/component/button/cp_cta_button.dart';
 import 'package:chatping/matching_second.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+
+import 'color/sementic/inverse.dart';
 
 class MatchingFirst extends StatefulWidget {
   const MatchingFirst({super.key});
@@ -19,24 +24,24 @@ var tempAnimals = [
 ];
 
 class _MatchingFirstState extends State<MatchingFirst> {
-
   var selectedIdx = 0;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: color(Background.normal),
       body: Center(
         child: Container(
-          padding: EdgeInsets.symmetric(horizontal: 30),
+          padding: const EdgeInsets.symmetric(horizontal: 30),
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
-              Text(
+              const Text(
                 "나는 익명의...",
                 style: TextStyle(fontSize: 16),
               ),
-              SizedBox(height: 32),
-              Container(
+              const SizedBox(height: 32),
+              SizedBox(
                 height: 100,
                 child: CupertinoPicker(
                     itemExtent: 32,
@@ -45,19 +50,19 @@ class _MatchingFirstState extends State<MatchingFirst> {
                         selectedIdx = selectedItem;
                       });
                     },
-                    children: List<Widget>.generate(tempAnimals.length, (int index) {
-                      return Text(tempAnimals[index]);
+                    children:
+                        List<Widget>.generate(tempAnimals.length, (int index) {
+                      return Text(
+                        tempAnimals[index],
+                        style: TextStyle(color: color(Inverse.background)),
+                      );
                     })),
               ),
-              SizedBox(height: 32),
-              SizedBox(
-                width: double.infinity,
-                height: 52,
-                child: FilledButton(
-                    onPressed: () {
-                      Navigator.push(context, MaterialPageRoute(builder: (context) => MatchingSecond()));
-                    }, child: const Text("계속하기")),
-              )
+              const SizedBox(height: 32),
+              CPCTAButton("계속하기", onPressed: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => MatchingSecond()));
+              })
             ],
           ),
         ),
