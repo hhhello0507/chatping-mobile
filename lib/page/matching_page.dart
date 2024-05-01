@@ -4,7 +4,7 @@ import 'package:chatping/component/button/cp_cta_button.dart';
 import 'package:chatping/component/theme/textstyle.dart';
 import 'package:chatping/util/primary_gradient_mask.dart';
 import 'package:flutter/material.dart';
-import 'matching_first.dart';
+import 'matching_first_page.dart';
 
 class MatchingPage extends StatefulWidget {
   const MatchingPage({super.key});
@@ -42,7 +42,7 @@ class _MatchingPageState extends State<MatchingPage> {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => const MatchingFirst()));
+                                builder: (context) => const MatchingFirstPage()));
                       })
                     ],
                   )

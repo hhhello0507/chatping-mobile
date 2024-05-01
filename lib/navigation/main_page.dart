@@ -1,4 +1,5 @@
-import 'package:chatping/matching.dart';
+import 'package:chatping/page/chat_page.dart';
+import 'package:chatping/page/matching_page.dart';
 import 'package:flutter/material.dart';
 
 import 'nav_bar.dart';
@@ -27,7 +28,7 @@ class _MainPageState extends State<MainPage> {
         navKey: homeNavKey,
       ),
       NavModel(
-        page: Text('hel'),
+        page: const ChatPage(),
         navKey: searchNavKey,
       ),
       NavModel(

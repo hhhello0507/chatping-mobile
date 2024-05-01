@@ -2,18 +2,18 @@ import 'package:chatping/color/build_context+.dart';
 import 'package:chatping/color/sementic/background.dart';
 import 'package:chatping/component/button/cp_cta_button.dart';
 import 'package:chatping/component/theme/textstyle.dart';
-import 'package:chatping/matching_third.dart';
+import 'package:chatping/page/matching_third_page.dart';
 import 'package:chatping/util/primary_gradient_mask.dart';
 import 'package:flutter/material.dart';
 
-class MatchingSecond extends StatefulWidget {
-  const MatchingSecond({super.key});
+class MatchingSecondPage extends StatefulWidget {
+  const MatchingSecondPage({super.key});
 
   @override
-  State<MatchingSecond> createState() => _MatchingSecondState();
+  State<MatchingSecondPage> createState() => _MatchingSecondPageState();
 }
 
-class _MatchingSecondState extends State<MatchingSecond> {
+class _MatchingSecondPageState extends State<MatchingSecondPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -35,7 +35,7 @@ class _MatchingSecondState extends State<MatchingSecond> {
                 Navigator.push(
                     context,
                     MaterialPageRoute(
-                        builder: (context) => const MatchingThird()));
+                        builder: (context) => const MatchingThirdPage()));
               })
             ],
           ),

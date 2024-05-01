@@ -2,18 +2,18 @@ import 'package:chatping/color/build_context+.dart';
 import 'package:chatping/color/sementic/background.dart';
 import 'package:chatping/component/button/cp_cta_button.dart';
 import 'package:chatping/component/theme/textstyle.dart';
-import 'package:chatping/matching_second.dart';
 import 'package:chatping/util/primary_gradient_mask.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import 'color/sementic/inverse.dart';
+import '../color/sementic/inverse.dart';
+import 'matching_second_page.dart';
 
-class MatchingFirst extends StatefulWidget {
-  const MatchingFirst({super.key});
+class MatchingFirstPage extends StatefulWidget {
+  const MatchingFirstPage({super.key});
 
   @override
-  State<MatchingFirst> createState() => _MatchingFirstState();
+  State<MatchingFirstPage> createState() => _MatchingFirstPageState();
 }
 
 var tempAnimals = [
@@ -25,7 +25,7 @@ var tempAnimals = [
   '니크테레우테스 프로키오노이데스'
 ];
 
-class _MatchingFirstState extends State<MatchingFirst> {
+class _MatchingFirstPageState extends State<MatchingFirstPage> {
   var selectedIdx = 0;
 
   @override
@@ -65,7 +65,7 @@ class _MatchingFirstState extends State<MatchingFirst> {
               const SizedBox(height: 32),
               CPCTAButton("계속하기", onPressed: () {
                 Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => MatchingSecond()));
+                    MaterialPageRoute(builder: (context) => MatchingSecondPage()));
               })
             ],
           ),

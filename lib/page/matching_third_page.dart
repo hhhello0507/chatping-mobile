@@ -4,14 +4,14 @@ import 'package:chatping/color/sementic/label.dart';
 import 'package:chatping/component/theme/textstyle.dart';
 import 'package:flutter/material.dart';
 
-class MatchingThird extends StatefulWidget {
-  const MatchingThird({super.key});
+class MatchingThirdPage extends StatefulWidget {
+  const MatchingThirdPage({super.key});
 
   @override
-  State<MatchingThird> createState() => _MatchingThirdState();
+  State<MatchingThirdPage> createState() => _MatchingThirdPageState();
 }
 
-class _MatchingThirdState extends State<MatchingThird> {
+class _MatchingThirdPageState extends State<MatchingThirdPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

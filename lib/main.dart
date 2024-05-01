@@ -1,4 +1,4 @@
-import 'package:chatping/app_state.dart';
+import 'package:chatping/app/app_state.dart';
 import 'package:chatping/navigation/main_page.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
     return ChangeNotifierProvider(
         create: (context) => AppState(brightness: Theme.of(context).brightness),
         child: MaterialApp(
-          title: 'Flutter Demo',
+          title: 'Chat Ping',
           theme: ThemeData(
             useMaterial3: true,
           ),
